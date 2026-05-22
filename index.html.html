@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MEERA TOURS - OUR SERVICE......YOUR HAPPINESS</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #ffd700;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%231e3c72" width="1200" height="600"/><path fill="%232a5298" d="M0 300 Q300 100 600 300 T1200 300 V600 H0 Z"/></svg>');
+            background-size: cover;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            margin-top: 70px;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero-content p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            animation: fadeInUp 1s ease-out 0.2s both;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #ffd700;
+            color: #1e3c72;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+            animation: fadeInUp 1s ease-out 0.4s both;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(255,215,0,0.4);
+        }
+
+        /* Services Section */
+        .services {
+            padding: 80px 0;
+            background: #f8f9fa;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #1e3c72;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .contact-info h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        .contact-item i {
+            font-size: 1.5rem;
+            margin-right: 1rem;
+            width: 30px;
+        }
+
+        .contact-form {
+            background: rgba(255,255,255,0.1);
+            padding: 2rem;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            background: rgba(255,255,255,0.9);
+        }
+
+        .form-group textarea {
+            height: 120px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            background: #25D366;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            transition: background 0.3s, transform 0.3s;
+        }
+
+        .submit-btn:hover {
+            background: #128C7E;
+            transform: translateY(-2px);
+        }
+
+        .submit-btn:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        /* Success Message */
+        .success-message {
+            display: none;
+            background: #25D366;
+            color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+            margin-top: 1rem;
+            animation: slideIn 0.5s ease-out;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* WhatsApp Button */
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 40px;
+            right: 40px;
+            background: #25D366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 3px #999;
+            z-index: 100;
+            animation: bounce 2s infinite;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+        }
+
+        /* Footer */
+        footer {
+            background: #1a1a1a;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-10px);
+            }
+            60% {
+                transform: translateY(-5px);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .contact-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .whatsapp-float {
+                width: 50px;
+                height: 50px;
+                font-size: 25px;
+                bottom: 20px;
+                right: 20px;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <div class="logo">🚕 MEERA TOURS</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>MEERA TOURS</h1>
+                <p>OUR SERVICE......YOUR HAPPINESS</p>
+                 <div class="cta-buttons">
+               <p style="font-weight: bold; font-size: 18px;">
+    📧 meeratours@gmail.com | 📱 WhatsApp: 9928520550 | Instant Booking | 24/7 Service
+</p>
+                     <a href="#contact" class="cta-button">Book Now</a>
+            </div>
+        </div>
+    </section>
+
+     <!-- Services Section -->
+    <section id="services" class="container">
+         <h2 class="section-title">Our Services</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">🚙</div>
+                <h3>Airport Transfers</h3>
+                <p>Reliable airport pickups and drop-offs with flight tracking.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🏙️</div>
+                <h3>City Rides</h3>
+                <p>Comfortable rides within the city at affordable rates.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🎉</div>
+                <h3>Event Planing</h3>
+                <p>Group transportation for weddings, parties & events.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cars Section -->
+      <section id="CARS" class="container">   
+        <h2 class="section-title">CARS WE PROVIDE</h2>
+           <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">🚙</div>
+                <h3>TOYOTA INNOVA</h3>
+                <p>6+1 Seater</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🚙</div>
+                <h3>INNOVA CRYSTA</h3>
+                <p>6+1/7+1 seater</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🚙</div> 
+                <h3>INNOVA HYCROSS</h3>
+                <p>6+1 seater with hybrid technology</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🚌</div> 
+                <h3>TRAVELLERS</h3>
+                <p>12+1/17+1 seater</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🚗</div> 
+                <h3>VINTAGE CARS</h3>
+                <p>We provide many type of vintage cars</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🏎️</div> 
+                <h3>LAXUARY CARS</h3>
+                <p>We provide many all type of laxury cars
+                   like- Bmw,Mercedes,Audi and many othres...</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Features Section -->
+        <h2 class="section-title">WHY CHOOSE MEERA TOURS?</h2>
+       <div class="services-grid">
+            <div class="service-card">
+                <i>✅</i>
+                <h3>24/7 Availability</h3>
+                <p>We're always ready to serve you, day or night.</p>
+            </div>
+           <div class="service-card">
+                <i>⭐</i>
+                <h3>Verified Drivers</h3>
+                <p>All drivers are background checked and trained.</p>
+            </div>
+            <div class="service-card">
+                <i>💰</i>
+                <h3>Affordable Rates</h3>
+                <p>Best prices with no hidden charges.</p>
+            </div>
+           <div class="service-card">
+                <i>🚀</i>
+                <h3>Fast Booking</h3>
+                <p>Book your ride in just 30 seconds.</p>
+            </div>
+        </div>
+    </section>
+
+     
+
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Get in Touch</h3>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <strong>Mobile / WhatsApp:</strong><br>
+                            <a href="tel:+919928520550" style="color: #ffd700;">+91 99285 20550</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <strong>Email:</strong><br>
+                            <a href="mailto:meeratours788@gmail.com" style="color: #ffd700;">meeratours788@gmail.com</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-clock"></i>
+                        Available 24/7 for your service
+                    </div>
+                    <div class="contact-item">
+                    *After booking our team replay as soon possible.
+                    </div>
+                    <div class="contact-item">
+                    *book online before 2-3 days of pickup date.
+                    </div>
+                    <div class="contact-item">
+                    *for urgent booking call on given number.
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h3>📱 Instant WhatsApp Booking</h3>
+                    <form id="bookingForm">
+                        <div class="form-group">
+                            <input type="text" id="customerName" placeholder="Your Name *" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" id="customerPhone" placeholder="Your Phone *" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="pickupLocation" placeholder="Pickup Location *" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="dropLocation" placeholder="Drop Location *" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Pick-up Date & Time</label>
+                            <input type="date time-local" id="datetime" required>
+                        </div>
+                        <div class="form-group">
+                            <select id="car" required>
+                                <option value="">-- Choose a Car --</option>
+                                <option value="sedan">sedan (4+1seater)</option>
+                                <option value="innova">innova (6+1Seater)</option>
+                                <option value="innova crysta">Innova crysta (7+1Seater)</option>
+                                <option value="Innova hycrose">Innova hycrose (7+1Seater)</option>
+                                <option value="tempo traveller">Tempo Traveller (17+1Seater)</option>
+                              </select>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="additionalDetails" placeholder="Date, Time, Special Requests..."></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn" id="submitBtn">
+                            <span id="btnText">🚀 Send WhatsApp Booking</span>
+                            <span id="btnLoading" style="display: none;">📱 Sending...</span>
+                        </button>
+                        <div id="successMessage" class="success-message">
+                            ✅ Booking sent to WhatsApp! We will contact you within 5 minutes.
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/919928520550?text=Hi%20MEERA%20TOURS%2C%20I%20need%20a%20taxi%20service." class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+   <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 MEERA TOURS. All rights reserved. | Safe & Reliable Taxi Service</p>
+        </div>
+    </footer>
+
+    <script>
+        // WhatsApp Business Number
+        const WHATSAPP_NUMBER = "919928520550"; // Your number without +91
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Booking Form WhatsApp Integration
+        document.getElementById('bookingForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('customerName').value;
+            const phone = document.getElementById('customerPhone').value;
+            const pickup = document.getElementById('pickupLocation').value;
+            const drop = document.getElementById('dropLocation').value;           
+            const car = document.getElementById('car').value;
+            const datetime = document.getElementById('datetime').value;
+            const details = document.getElementById('additionalDetails').value || 'No additional details';
+
+            // Create WhatsApp message
+            const message = ` *NEW TAXI BOOKING REQUEST* 
+
+ *Customer:* ${name}
+ *Phone:* ${phone}
+ *Pickup:* ${pickup}
+ *Drop:* ${drop}
+ *Car:* ${car}
+ *datetime:* ${datetime}
+ *Details:* ${details}
+
+*MEERA TOURS - Please confirm & reply!*`;
+
+            // Encode message for WhatsApp URL
+            const encodedMessage = encodeURIComponent(message);
+            const whatsappURL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodedMessage}`;
+
+            // Show loading
+            const btnText = document.getElementById('btnText');
+            const btnLoading = document.getElementById('btnLoading');
+            const submitBtn = document.getElementById('submitBtn');
+            const successMsg = document.getElementById('successMessage');
+
+            btnText.style.display = 'none';
+            btnLoading.style.display = 'inline';
+            submitBtn.disabled = true;
+
+            // Open WhatsApp after short delay
+            setTimeout(() => {
+                window.open(whatsappURL, '_blank');
+                
+                // Show success message
+                successMsg.style.display = 'block';
+                
+                // Reset form after 3 seconds
+                setTimeout(() => {
+                    this.reset();
+                    successMsg.style.display = 'none';
+                    btnText.style.display = 'inline';
+                    btnLoading.style.display = 'none';
+                    submitBtn.disabled = false;
+                }, 3000);
+            }, 1000);
+        });
+
+        // Auto-format phone number
+        document.getElementById('customerPhone').addEventListener('input', function(e) {
+            let value = e.target.value.replace(/\D/g, '');
+            if (value.length > 10) {
+                value = value.slice(-10);
+            }
+            e.target.value = value;
+        });
+    </script>
+</body>
+</html>
