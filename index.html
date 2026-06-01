@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meera Tours - Rajasthan Tour Packages, Taxi Service & Airport Transfers</title>
+    <title>MEERA TOURS - OUR SERVICE......YOUR HAPPINESS</title>
     <style>
+
         * {
             margin: 0;
             padding: 0;
@@ -25,7 +26,7 @@
 
         /* Header */
         header {
-            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            background: linear-gradient(135deg, #111111 0%, #333333 100%);
             color: white;
             padding: 1rem 0;
             position: fixed;
@@ -59,37 +60,51 @@
         }
 
         .nav-links a:hover {
-            color: #ffd700;
+            color: #d4af37;
         }
 
         /* Hero Section */
         .hero {
-    background: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)),
-                url('https://github.com/Moinkhan0106/Meeratours./blob/main/desktop.jpg.jpeg?raw=true');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: white;
-    margin-top: 70px;
-}
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23111111" width="1200" height="600"/><path fill="%23d4af37" d="M0 300 Q300 100 600 300 T1200 300 V600 H0 Z"/></svg>');
+            background-size: cover;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            margin-top: 70px;
+        }
 
-/* Mobile Background */
-@media (max-width: 768px) {
-    .hero {
-        background: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)),
-                    url('https://github.com/Moinkhan0106/Meeratours./blob/main/mobile.jpg.jpeg?raw=true');
-        background-size: contain;
-        background-position: top center;
-        background-repeat: no-repeat;
-        background-color: #000;
-    }
-}
-   
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero-content p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            animation: fadeInUp 1s ease-out 0.2s both;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #d4af37;
+            color: #111111;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+            animation: fadeInUp 1s ease-out 0.4s both;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(255,215,0,0.4);
+        }
 
         /* Services Section */
         .services {
@@ -101,7 +116,7 @@
             text-align: center;
             font-size: 2.5rem;
             margin-bottom: 3rem;
-            color: #1e3c72;
+            color: #000000;
         }
 
         .services-grid {
@@ -132,7 +147,7 @@
         /* Contact Section */
         .contact {
             padding: 80px 0;
-            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            background: linear-gradient(135deg, #111111 0%, #333333 100%);
             color: white;
         }
 
@@ -258,7 +273,8 @@
 
         /* Footer */
         footer {
-            background: #1a1a1a;
+            background: #000000;
+            border-top: 2px solid #d4af37;
             color: white;
             text-align: center;
             padding: 2rem 0;
@@ -288,7 +304,59 @@
             }
         }
 
-        /* Responsive */
+        
+.gallery {
+    padding: 80px 0;
+    background: #f8f8f8;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.gallery-item {
+    overflow: hidden;
+    border-radius: 15px;
+    border: 3px solid #d4af37;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    transition: 0.4s;
+}
+
+.gallery-item img:hover {
+    transform: scale(1.08);
+}
+
+
+        
+/* Gallery Slideshow */
+.gallery-item.slideshow{
+    position:relative;
+    height:280px;
+}
+.gallery-item.slideshow img{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    opacity:0;
+    transition:opacity 1.5s ease-in-out;
+}
+.gallery-item.slideshow img.active{
+    opacity:1;
+}
+
+/* Responsive */
         @media (max-width: 768px) {
             .nav-links {
                 display: none;
@@ -310,20 +378,293 @@
                 bottom: 20px;
                 right: 20px;
             }
+
+            .gallery {
+    padding: 80px 0;
+    background: #f8f8f8;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.gallery-item {
+    overflow: hidden;
+    border-radius: 15px;
+    border: 3px solid #d4af37;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    transition: 0.4s;
+}
+
+.gallery-item img:hover {
+    transform: scale(1.08);
+}
         }
-    </style>
+    
+/* ===== MOBILE OPTIMIZATION ===== */
+.about-grid{
+    display:grid;
+    grid-template-columns:1fr;
+    max-width:1000px;
+    margin:auto;
+    padding:20px;
+}
+
+@media (max-width:768px){
+
+    .container{
+        padding:0 15px;
+    }
+
+    nav{
+        flex-direction:column;
+        gap:10px;
+    }
+
+    .nav-links{
+        display:flex !important;
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:10px;
+    }
+
+    .nav-links a{
+        font-size:14px;
+    }
+
+    .hero{
+        height:auto;
+        min-height:80vh;
+        padding:80px 15px;
+    }
+
+    .hero-content h1{
+        font-size:2rem;
+    }
+
+    .hero-content p{
+        font-size:1rem;
+    }
+
+    .services-grid{
+        grid-template-columns:1fr;
+    }
+
+    .gallery-grid{
+        grid-template-columns:1fr !important;
+    }
+
+    .gallery-item img{
+        height:220px;
+    }
+
+    .contact-form{
+        padding:15px;
+    }
+
+    .form-group input,
+    .form-group textarea,
+    .form-group select{
+        font-size:16px;
+    }
+
+    .section-title{
+        font-size:1.8rem;
+    }
+
+    .service-card{
+        padding:20px;
+    }
+}
+
+
+.instagram-float,.call-float{
+position:fixed;
+width:60px;height:60px;
+right:40px;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+color:#fff;
+text-decoration:none;
+font-size:28px;
+z-index:100;
+box-shadow:2px 2px 10px rgba(0,0,0,.3);
+}
+.instagram-float{bottom:110px;background:#E4405F;}
+.call-float{bottom:180px;background:#007BFF;}
+
+@media(max-width:768px){
+.instagram-float,.call-float{width:50px;height:50px;right:20px;}
+.instagram-float{bottom:90px;}
+.call-float{bottom:160px;}
+}
+
+
+/* Fixed Floating Buttons */
+.whatsapp-float,
+.instagram-float,
+.call-float{
+position:fixed !important;
+right:20px !important;
+width:60px;
+height:60px;
+border-radius:50%;
+display:flex !important;
+align-items:center;
+justify-content:center;
+text-decoration:none;
+z-index:99999 !important;
+animation:bounce 2s infinite;
+}
+
+.whatsapp-float{bottom:20px !important;}
+.instagram-float{bottom:90px !important;background:#E4405F;color:#fff;}
+.call-float{bottom:160px !important;background:#007BFF;color:#fff;}
+
+@media(max-width:768px){
+.whatsapp-float,.instagram-float,.call-float{
+width:50px;height:50px;right:15px !important;
+}
+.whatsapp-float{bottom:15px !important;}
+.instagram-float{bottom:80px !important;}
+.call-float{bottom:145px !important;}
+}
+
+
+.float-label{
+    margin-left:8px;
+    font-size:12px;
+    font-weight:bold;font-size:12px;
+    color:white;
+}
+.whatsapp-float,.instagram-float,.call-float{
+    width:auto !important;
+    padding:0 12px;
+    min-width:60px;
+}
+
+
+/* Pill floating buttons with visible names */
+.whatsapp-float,
+.instagram-float,
+.call-float{
+    position:fixed !important;
+    right:20px !important;
+    height:42px !important;
+    width:auto !important;
+    min-width:95px;
+    padding:0 10px !important;
+    border-radius:30px !important;
+    display:flex !important;
+    align-items:center !important;
+    justify-content:center !important;
+    gap:8px;
+    color:#fff !important;
+    text-decoration:none !important;
+    font-weight:bold;font-size:12px;
+    z-index:99999 !important;
+}
+
+.call-float{bottom:160px !important;background:#007BFF !important;}
+.instagram-float{bottom:90px !important;background:#E4405F !important;}
+.whatsapp-float{bottom:20px !important;}
+
+@media(max-width:768px){
+ .whatsapp-float,.instagram-float,.call-float{
+   min-width:90px;
+   height:38px !important;
+   right:10px !important;
+ }
+}
+
+
+.achievements-section{
+    background:#ffffff;
+    padding:80px 0;
+    color:white;
+}
+.achievements-section .service-card:nth-child(1){
+    background:#d4af37;
+    color:#111;
+}
+.achievements-section .service-card:nth-child(2){
+    background:#0b1f4d;
+    color:white;
+    border:5px solid #d4af37;
+}
+.achievements-section .service-card:nth-child(3){
+    background:#1f2937;
+    color:white;
+    border:5px solid #d4af37;
+}
+.achievements-section .service-card:nth-child(4){
+    background:#111;
+    color:#111;
+    border:10px solid #d4af37
+}
+.achievements-section .service-card h3{
+    font-size:40px;
+    color:inherit;    
+}
+
+
+/* Colorful cards across site */
+.services-grid .service-card:nth-child(4n+1){
+    background:#d4af37;
+    color:#111111;
+}
+.services-grid .service-card:nth-child(4n+2){
+    background:#0b1f4d;
+    color:white;
+}
+.services-grid .service-card:nth-child(4n+3){
+    background:#1f2937;
+    color:white;
+}
+.services-grid .service-card:nth-child(4n+4){
+    background:#ffffff;
+    border:2px solid #d4af37;
+}
+
+.services-grid .service-card h3{
+    margin-bottom:10px;
+}
+
+.service-card{
+    transition:transform .3s, box-shadow .3s;
+}
+
+.section-title,
+section h1,
+section h2,
+section h3{
+    font-weight:800 !important;
+}
+
+@media (max-width:768px){
+    .section-title,
+    section h1,
+    section h2,
+    section h3{
+        font-weight:800 !important;
+    }
+
+}
+
+</style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-VP5QJHXSJ7">
-</script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-VP5QJHXSJ7');
-</script>
 <body>
     <!-- Header -->
     <header>
@@ -331,7 +672,10 @@
             <div class="logo">🚕 MEERA TOURS</div>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
+                <li><a href="#instant-booking">Instant Booking</a></li>
+                <li><a href="#about">About Us</a></li>
                 <li><a href="#services">Services</a></li>
+                <li><a href="#gallery">Gallery</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
@@ -345,15 +689,59 @@
                 <p>OUR SERVICE......YOUR HAPPINESS</p>
                  <div class="cta-buttons">
                <p style="font-weight: bold; font-size: 18px;">
-    📧 meeratours@gmail.com | 📱 WhatsApp: 9928520550 | Instant Booking | 24/7 Service
+    📧 meeratours788@gmail.com | 📱 WhatsApp: 9928520550 | Instant Booking | 24/7 Service
 </p>
                      <a href="#contact" class="cta-button">Book Now</a>
             </div>
         </div>
     </section>
+<section id="instant-booking" style="padding:50px 20px;background:#d4af37;text-align:center;">
+    <div class="container">
+        <h2 style="color:#111;margin-bottom:15px;">🚕 Instant Booking</h2>
+        <p style="margin-bottom:20px;font-size:18px;">
+            Call, WhatsApp, or Instagram us now for instant taxi booking.
+        </p>
+        <a href="tel:+919928520550" class="cta-button">📞 Call Now</a>
+        <a href="https://wa.me/919928520550" class="cta-button" style="margin-left:10px;">💬 WhatsApp Now</a>
+    </div>
+</section>
+
+  
+ <!-- About Section -->
+    <section class="section" id="about">
+        <div class="about-grid">
+            <div class="about-text">
+                <h2 class="section-title">Welcome to Meera Tours</h2>
+                 <div class="service-card">
+                <h3>
+Welcome to Meera Tours, your trusted travel partner since 2009. With years of experience in the travel industry, we are dedicated to creating memorable journeys and hassle-free travel experiences for our valued customers.
+
+At Meera Tours, we specialize in providing customized tour packages, holiday planning, hotel bookings, transportation services, and travel assistance tailored to every traveler's needs. Whether you're planning a family vacation, honeymoon, group tour, pilgrimage, or corporate trip, our team is committed to delivering comfort, convenience, and exceptional service.
+
+Since our establishment in 2009, we have built a reputation for reliability, customer satisfaction, and affordable travel solutions. Our mission is to turn your travel dreams into reality by offering carefully planned itineraries, quality services, and unforgettable experiences.
+
+We believe that every journey should be enjoyable, stress-free, and filled with lasting memories. Let Meera Tours be your guide to discovering new destinations and experiencing the world with confidence.
+
+**Meera Tours – Creating Memorable Journeys Since 2009.**
+</h3>
+              
+        </div>
+    </section>
 
      <!-- Services Section -->
-    <section id="services" class="container">
+    
+<section class="achievements-section">
+<div class="container">
+<h2 class="section-title">🏆 Trusted Since 2009</h2>
+<p style="text-align:center;margin-bottom:30px;">Providing Safe, Reliable & Comfortable Travel Services for Over 15 Years</p>
+<div class="services-grid">
+<div class="service-card"><h3>15+</h3><p>Years of Experience</p></div>
+<div class="service-card"><h3>50,000+</h3><p>Happy Customers</p></div>
+<div class="service-card"><h3>24/7</h3><p>Customer Support</p></div>
+</div>
+</section>
+
+<section id="services" class="container">
          <h2 class="section-title">Our Services</h2>
         <div class="services-grid">
             <div class="service-card">
@@ -371,10 +759,27 @@
                 <h3>Event Planing</h3>
                 <p>Group transportation for weddings, parties & events.</p>
             </div>
-        </div>
-    </section>
+        
+<div class="service-card">
+<div class="service-icon">🛕</div>
+<h3>Pilgrimage Tours</h3>
+<p>Comfortable religious and spiritual travel packages.</p>
+</div>
+<div class="service-card">
+<div class="service-icon">🏨</div>
+<h3>Tours Packages</h3>
+<p>Assistance with affordable and premium Tours Packages.</p>
+</div>
+<div class="service-card">
+<div class="service-icon">📍</div>
+<h3>Outstation Trips</h3>
+<p>Safe long-distance travel across Rajasthan and India.</p>
+</div>
+</div>
+</section>
 
-    <!-- Cars Section -->
+<!-- Cars Section -->
+
       <section id="CARS" class="container">   
         <h2 class="section-title">CARS WE PROVIDE</h2>
            <div class="services-grid">
@@ -400,8 +805,8 @@
             </div>
             <div class="service-card">
                 <div class="service-icon">🚗</div> 
-                <h3>VINTAGE CARS</h3>
-                <p>We provide many type of vintage cars</p>
+                <h3>Sedan & Hatchback Cars</h3>
+                <p>We provide all type of Sedan&Hatchback Cars</p>
             </div>
             <div class="service-card">
                 <div class="service-icon">🏎️</div> 
@@ -412,13 +817,49 @@
         </div>
     </section>
     
+<section id="gallery" class="gallery">
+    <div class="container">
+        <h2 class="section-title">Our Gallery</h2>
+
+        
+<div class="gallery-grid">
+
+<div class="gallery-item slideshow">
+<img src="https://i.ibb.co/hxdxfHWw/photo15.jpg" class="active">
+<img src="https://i.ibb.co/WNmwQFjb/photo10.jpg">
+<img src="https://i.ibb.co/nq6xx8LY/photo5.jpg">
+<img src="https://i.ibb.co/n8n39Rzd/photo13.jpg">
+<img src="https://i.ibb.co/Mkq2j9n7/photo12.jpg">
+</div>
+
+<div class="gallery-item slideshow">
+<img src="https://i.ibb.co/Z1X8cXnt/photo7.jpg" class="active">
+<img src="https://i.ibb.co/kgdDKPq7/photo8.jpg">
+<img src="https://i.ibb.co/hxdxfHWw/photo15.jpg">
+<img src="https://i.ibb.co/WNmwQFjb/photo10.jpg">
+<img src="https://i.ibb.co/nq6xx8LY/photo5.jpg">
+</div>
+
+<div class="gallery-item slideshow">
+<img src="https://i.ibb.co/n8n39Rzd/photo13.jpg" class="active">
+<img src="https://i.ibb.co/Mkq2j9n7/photo12.jpg">
+<img src="https://i.ibb.co/Z1X8cXnt/photo7.jpg">
+<img src="https://i.ibb.co/kgdDKPq7/photo8.jpg">
+<img src="https://i.ibb.co/hxdxfHWw/photo15.jpg">
+</div>
+
+</div>
+   </div>
+</section>
+
+
     <!-- Features Section -->
         <h2 class="section-title">WHY CHOOSE MEERA TOURS?</h2>
        <div class="services-grid">
             <div class="service-card">
                 <i>✅</i>
-                <h3>24/7 Availability</h3>
-                <p>We're always ready to serve you, day or night.</p>
+                <h3>15+ year trust</h3>
+                <p>15+ Years of Experience.</p>
             </div>
            <div class="service-card">
                 <i>⭐</i>
@@ -448,17 +889,17 @@
                 <div class="contact-info">
                     <h3>Get in Touch</h3>
                     <div class="contact-item">
-                        <i class="fas fa-phone"></i>
+                        📞
                         <div>
                             <strong>Mobile / WhatsApp:</strong><br>
-                            <a href="tel:+919928520550" style="color: #ffd700;">+91 99285 20550</a>
+                            <a href="tel:+919928520550" style="color: #d4af37;">+91 99285 20550</a>
                         </div>
                     </div>
                     <div class="contact-item">
                         <i class="fas fa-envelope"></i>
                         <div>
                             <strong>Email:</strong><br>
-                            <a href="mailto:meeratours788@gmail.com" style="color: #ffd700;">meeratours788@gmail.com</a>
+                            <a href="mailto:meeratours788@gmail.com" style="color: #d4af37;">meeratours788@gmail.com</a>
                         </div>
                     </div>
                     <div class="contact-item">
@@ -521,11 +962,15 @@
     </section>
 
     <!-- WhatsApp Floating Button -->
-    <a href="https://wa.me/919928520550?text=Hi%20MEERA%20TOURS%2C%20I%20need%20a%20taxi%20service." class="whatsapp-float" target="_blank">
-        <i class="fab fa-whatsapp"></i>
-    </a>
+    <a href="https://wa.me/919928520550?text=Hi%20MEERA%20TOURS%2C%20I%20need%20a%20taxi%20service." class="whatsapp-float" target="_blank">💬 WhatsApp</a>
 
-   <!-- Footer -->
+   
+<a href="https://instagram.com/meeratours0961" class="instagram-float" target="_blank">📸 Instagram</a>
+
+<a href="tel:+919928520550" class="call-float">📞 Call</a>
+
+
+<!-- Footer -->
     <footer>
         <div class="container">
             <p>&copy; 2024 MEERA TOURS. All rights reserved. | Safe & Reliable Taxi Service</p>
@@ -616,6 +1061,20 @@
             }
             e.target.value = value;
         });
-    </script>
+    
+// Gallery slideshows
+document.querySelectorAll('.slideshow').forEach(slideshow => {
+    const images = slideshow.querySelectorAll('img');
+    let index = 0;
+    setInterval(() => {
+        images[index].classList.remove('active');
+        index = (index + 1) % images.length;
+        images[index].classList.add('active');
+    }, 3000);
+});
+
+</script>
 </body>
 </html>
+
+<!-- floating button size updated -->
