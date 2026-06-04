@@ -64,21 +64,17 @@
         }
 
         /* Hero Section */
-        .hero {
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
-                url('https://github.com/Moinkhan0106/Meeratours./blob/main/mt.png?raw=true');
-
+       .hero {
+    background-image: url('https://github.com/Moinkhan0106/Meeratours./blob/main/mt.png?raw=true');
     background-size: cover;
-    background-position: top center;
-    background-repeat: no-repeat;
+    background-position: center;
+}
 
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: white;
-    margin-top: 70px;
+@media (max-width: 768px) {
+    .hero {
+        background-image: url('https://github.com/Moinkhan0106/Meeratours./blob/main/643671da-037d-4283-b565-c77e145d2894.png?raw=true');
+        background-position: center;
+    }
 }
 
         .hero-content h1 {
