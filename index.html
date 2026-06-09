@@ -42,9 +42,22 @@
             align-items: center;
         }
 
-        .logo {
-            font-size: 1.8rem;
-            font-weight: bold;
+       .logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-size:1.5rem;
+    font-weight:bold;
+}
+
+.logo img{
+    width:120px !important;
+    height:60px !important;
+    max-width:120px !important;
+    max-height:60px !important;
+    object-fit:contain !important;
+    display:block !important;
+}
         }
 
         .nav-links {
@@ -660,39 +673,6 @@ section h3{
         font-weight:800 !important;
     }
 
-/* LOGO FIX */
-.logo{
-    display:flex;
-    align-items:center;
-    gap:12px;
-    font-size:1.8rem;
-    font-weight:bold;
-    white-space:nowrap;
-}
-
-.logo img{
-    width:auto !important;
-    height:60px !important;
-    max-height:60px !important;
-    max-width:180px !important;
-    object-fit:contain !important;
-    display:block;
-    flex-shrink:0;
-}
-
-/* Mobile */
-@media (max-width:768px){
-    .logo{
-        font-size:1.2rem;
-    }
-
-    .logo img{
-        height:40px !important;
-        max-height:40px !important;
-        max-width:120px !important;
-    }
-}
-
 </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
@@ -700,8 +680,11 @@ section h3{
     <!-- Header -->
     <header>
         <nav class="container">
-          <div class="logo">
-    <img src="https://github.com/Moinkhan0106/Meeratours./blob/main/transprint%20logo.png?raw=true" alt="Meera Tours Logo">
+         <div class="logo">
+    <img src="https://raw.githubusercontent.com/Moinkhan0106/Meeratours./main/transprint%20logo.png"
+         alt="Meera Tours Logo"
+         width="120"
+         height="60">
     <span>MEERA TOURS</span>
 </div>
             <ul class="nav-links">
