@@ -1,1128 +1,342 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MEERA TOURS - OUR SERVICE......YOUR HAPPINESS</title>
-    <style>
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Arial', sans-serif;
-            line-height: 1.6;
-            color: #333;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* Header */
-        header {
-            background: linear-gradient(135deg, #111111 0%, #333333 100%);
-            color: white;
-            padding: 1rem 0;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
-
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: #d4af37;
-        }
-
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23111111" width="1200" height="600"/><path fill="%23d4af37" d="M0 300 Q300 100 600 300 T1200 300 V600 H0 Z"/></svg>');
-            background-size: cover;
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: white;
-            margin-top: 70px;
-        }
-
-        .hero-content h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-            animation: fadeInUp 1s ease-out;
-        }
-
-        .hero-content p {
-            font-size: 1.3rem;
-            margin-bottom: 2rem;
-            animation: fadeInUp 1s ease-out 0.2s both;
-        }
-
-        .cta-button {
-            display: inline-block;
-            background: #d4af37;
-            color: #111111;
-            padding: 15px 30px;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: bold;
-            font-size: 1.1rem;
-            transition: transform 0.3s, box-shadow 0.3s;
-            animation: fadeInUp 1s ease-out 0.4s both;
-        }
-
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(255,215,0,0.4);
-        }
-
-        /* Services Section */
-        .services {
-            padding: 80px 0;
-            background: #f8f9fa;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            color: #000000;
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .service-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 15px;
-            text-align: center;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-        }
-
-        .service-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-
-        /* Contact Section */
-        .contact {
-            padding: 80px 0;
-            background: linear-gradient(135deg, #111111 0%, #333333 100%);
-            color: white;
-        }
-
-        .contact-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-        }
-
-        .contact-info h3 {
-            font-size: 1.8rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: center;
-            margin-bottom: 1.5rem;
-            font-size: 1.1rem;
-        }
-
-        .contact-item i {
-            font-size: 1.5rem;
-            margin-right: 1rem;
-            width: 30px;
-        }
-
-        .contact-form {
-            background: rgba(255,255,255,0.1);
-            padding: 2rem;
-            border-radius: 15px;
-            backdrop-filter: blur(10px);
-        }
-
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        .form-group input,
-        .form-group textarea,
-        .form-group select {
-            width: 100%;
-            padding: 12px;
-            border: none;
-            border-radius: 8px;
-            font-size: 1rem;
-            background: rgba(255,255,255,0.9);
-        }
-
-        .form-group textarea {
-            height: 120px;
-            resize: vertical;
-        }
-
-        .submit-btn {
-            background: #25D366;
-            color: white;
-            padding: 15px 30px;
-            border: none;
-            border-radius: 8px;
-            font-size: 1.1rem;
-            font-weight: bold;
-            cursor: pointer;
-            width: 100%;
-            transition: background 0.3s, transform 0.3s;
-        }
-
-        .submit-btn:hover {
-            background: #128C7E;
-            transform: translateY(-2px);
-        }
-
-        .submit-btn:disabled {
-            background: #ccc;
-            cursor: not-allowed;
-            transform: none;
-        }
-
-        /* Success Message */
-        .success-message {
-            display: none;
-            background: #25D366;
-            color: white;
-            padding: 1rem;
-            border-radius: 8px;
-            text-align: center;
-            margin-top: 1rem;
-            animation: slideIn 0.5s ease-out;
-        }
-
-        @keyframes slideIn {
-            from {
-                opacity: 0;
-                transform: translateY(-20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* WhatsApp Button */
-        .whatsapp-float {
-            position: fixed;
-            width: 60px;
-            height: 60px;
-            bottom: 40px;
-            right: 40px;
-            background: #25D366;
-            color: #FFF;
-            border-radius: 50px;
-            text-align: center;
-            font-size: 30px;
-            box-shadow: 2px 2px 3px #999;
-            z-index: 100;
-            animation: bounce 2s infinite;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-        }
-
-        /* Footer */
-        footer {
-            background: #000000;
-            border-top: 2px solid #d4af37;
-            color: white;
-            text-align: center;
-            padding: 2rem 0;
-        }
-
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% {
-                transform: translateY(0);
-            }
-            40% {
-                transform: translateY(-10px);
-            }
-            60% {
-                transform: translateY(-5px);
-            }
-        }
-
-        
-.gallery {
-    padding: 80px 0;
-    background: #f8f8f8;
-}
-
-.gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 25px;
-    margin-top: 30px;
-}
-
-.gallery-item {
-    overflow: hidden;
-    border-radius: 15px;
-    border: 3px solid #d4af37;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-}
-
-.gallery-item img {
-    width: 100%;
-    height: 280px;
-    object-fit: cover;
-    transition: 0.4s;
-}
-
-.gallery-item img:hover {
-    transform: scale(1.08);
-}
-
-
-        
-/* Gallery Slideshow */
-.gallery-item.slideshow{
-    position:relative;
-    height:280px;
-}
-.gallery-item.slideshow img{
-    position:absolute;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    opacity:0;
-    transition:opacity 1.5s ease-in-out;
-}
-.gallery-item.slideshow img.active{
-    opacity:1;
-}
-
-/* Responsive */
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-
-            .hero-content h1 {
-                font-size: 2.5rem;
-            }
-
-            .contact-content {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-
-            .whatsapp-float {
-                width: 50px;
-                height: 50px;
-                font-size: 25px;
-                bottom: 20px;
-                right: 20px;
-            }
-
-            .gallery {
-    padding: 80px 0;
-    background: #f8f8f8;
-}
-
-.gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 25px;
-    margin-top: 30px;
-}
-
-.gallery-item {
-    overflow: hidden;
-    border-radius: 15px;
-    border: 3px solid #d4af37;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-}
-
-.gallery-item img {
-    width: 100%;
-    height: 280px;
-    object-fit: cover;
-    transition: 0.4s;
-}
-
-.gallery-item img:hover {
-    transform: scale(1.08);
-}
-        }
-    
-/* ===== MOBILE OPTIMIZATION ===== */
-.about-grid{
-    display:grid;
-    grid-template-columns:1fr;
-    max-width:1000px;
-    margin:auto;
-    padding:20px;
-}
-
-@media (max-width:768px){
-
-    .container{
-        padding:0 15px;
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Meera Tours | Taxi, Tours & Travel Services</title>
+  <meta name="description" content="Plan your journey with Meera Tours. Book comfortable cars, airport transfers, outstation taxi services, pilgrimage trips and customized tour packages.">
+  <meta name="theme-color" content="#102a43">
+  <meta property="og:title" content="Meera Tours | Our Service, Your Happiness">
+  <meta property="og:description" content="Comfortable rides, memorable journeys and easy WhatsApp bookings with Meera Tours.">
+  <meta property="og:type" content="website">
+  <link rel="canonical" href="https://wwwmeeratours.com/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{--navy:#102a43;--navy2:#183e5b;--gold:#e5b85c;--cream:#fbf8f1;--ink:#203040;--muted:#627384;--white:#fff;--line:#e6e9ec;--green:#168b57;--shadow:0 18px 50px rgba(16,42,67,.12)}
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth;scroll-padding-top:88px}
+    body{font-family:"DM Sans",Arial,sans-serif;color:var(--ink);line-height:1.65;background:#fff}
+    img{max-width:100%;display:block}
+    a{color:inherit}
+    .container{width:min(1160px,calc(100% - 40px));margin:auto}
+    .topbar{background:var(--navy);color:#eaf1f6;font-size:.86rem;padding:8px 0}
+    .topbar .container{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+    .topbar a{text-decoration:none;color:#fff}
+    header{position:sticky;top:0;z-index:1000;background:rgba(255,255,255,.96);backdrop-filter:blur(12px);border-bottom:1px solid rgba(16,42,67,.08)}
+    .nav{min-height:82px;display:flex;align-items:center;justify-content:space-between;gap:22px}
+    .brand{display:flex;align-items:center;gap:12px;text-decoration:none;min-width:0}
+    .brand img{width:64px;height:58px;object-fit:contain}
+    .brand-name{font-weight:800;letter-spacing:.08em;color:var(--navy);font-size:1.1rem;line-height:1.2}
+    .brand-name small{display:block;font-size:.66rem;font-weight:600;letter-spacing:.12em;color:#9a7634;margin-top:5px}
+    .nav-links{display:flex;align-items:center;gap:25px;list-style:none}
+    .nav-links a{text-decoration:none;font-size:.93rem;font-weight:700;color:#33495d}
+    .nav-links a:hover{color:#a87924}
+    .nav-cta,.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;border:0;border-radius:999px;padding:13px 21px;font-weight:800;text-decoration:none;cursor:pointer;transition:.2s}
+    .nav-cta,.btn-gold{background:var(--gold);color:#182b3b}
+    .btn:hover,.nav-cta:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(0,0,0,.15)}
+    .menu-toggle{display:none;background:none;border:1px solid var(--line);border-radius:10px;padding:9px 12px;font-size:1.25rem;color:var(--navy)}
+    .hero{position:relative;min-height:620px;display:grid;align-items:center;overflow:hidden;background:linear-gradient(90deg,rgba(8,27,44,.88),rgba(8,27,44,.58) 55%,rgba(8,27,44,.18)),url("photo6.jpeg") center/cover no-repeat;color:#fff}
+    .hero:after{content:"";position:absolute;inset:auto 0 0;height:110px;background:linear-gradient(transparent,rgba(5,20,34,.28))}
+    .hero-content{position:relative;z-index:1;max-width:720px;padding:90px 0}
+    .eyebrow{display:inline-flex;align-items:center;gap:9px;color:#f4d99e;text-transform:uppercase;letter-spacing:.17em;font-size:.78rem;font-weight:800;margin-bottom:20px}
+    .eyebrow:before{content:"";width:30px;height:2px;background:var(--gold)}
+    h1,h2,h3{line-height:1.15}
+    h1,h2{font-family:"Playfair Display",Georgia,serif}
+    .hero h1{font-size:clamp(2.7rem,6vw,5.2rem);max-width:720px;margin-bottom:20px}
+    .hero h1 span{color:#f2cb7c}
+    .hero p{font-size:1.12rem;color:#e5edf4;max-width:590px;margin-bottom:30px}
+    .hero-actions{display:flex;gap:13px;flex-wrap:wrap}
+    .btn-outline{border:1px solid rgba(255,255,255,.7);color:#fff;background:rgba(255,255,255,.08)}
+    .trust-strip{position:relative;z-index:2;margin-top:-35px}
+    .trust-grid{display:grid;grid-template-columns:repeat(3,1fr);background:#fff;border-radius:18px;box-shadow:var(--shadow);padding:24px 28px;gap:20px}
+    .trust-item{display:flex;align-items:center;gap:13px}
+    .trust-icon{width:45px;height:45px;border-radius:14px;background:#fbf2df;display:grid;place-items:center;font-size:1.35rem}
+    .trust-item strong{display:block;color:var(--navy);font-size:.98rem}
+    .trust-item span{display:block;color:var(--muted);font-size:.82rem}
+    section{padding:88px 0}
+    .section-head{text-align:center;max-width:700px;margin:0 auto 42px}
+    .section-kicker{color:#a87924;font-size:.76rem;font-weight:800;letter-spacing:.17em;text-transform:uppercase;margin-bottom:12px}
+    .section-head h2{font-size:clamp(2rem,4vw,3.1rem);color:var(--navy);margin-bottom:14px}
+    .section-head p{color:var(--muted)}
+    .about{background:var(--cream)}
+    .about-grid{display:grid;grid-template-columns:1fr 1.05fr;gap:55px;align-items:center}
+    .about-photo{position:relative}
+    .about-photo img{width:100%;height:430px;object-fit:cover;border-radius:22px;box-shadow:var(--shadow)}
+    .experience-tag{position:absolute;right:-18px;bottom:24px;background:var(--navy);color:#fff;padding:17px 22px;border-radius:15px;box-shadow:var(--shadow)}
+    .experience-tag strong{display:block;color:var(--gold);font-size:1.5rem}
+    .about-copy h2{font:700 clamp(2rem,4vw,3rem)/1.15 "Playfair Display",Georgia,serif;color:var(--navy);margin-bottom:18px}
+    .about-copy p{color:var(--muted);margin-bottom:15px}
+    .check-list{display:grid;grid-template-columns:1fr 1fr;gap:11px;margin-top:22px;list-style:none}
+    .check-list li:before{content:"✓";color:var(--green);font-weight:900;margin-right:9px}
+    .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .service-card{padding:28px;border:1px solid var(--line);border-radius:18px;background:#fff;transition:.25s}
+    .service-card:hover{transform:translateY(-6px);box-shadow:var(--shadow);border-color:#ead5a8}
+    .service-icon{width:55px;height:55px;display:grid;place-items:center;border-radius:16px;background:#fbf2df;font-size:1.65rem;margin-bottom:19px}
+    .service-card h3{font-size:1.12rem;color:var(--navy);margin-bottom:9px}
+    .service-card p{font-size:.94rem;color:var(--muted)}
+    .fleet{background:var(--navy);color:#fff}
+    .fleet .section-head h2{color:#fff}
+    .fleet .section-head p{color:#c6d2dc}
+    .fleet-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .fleet-card{border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.07);padding:22px;border-radius:16px}
+    .fleet-card .car-icon{font-size:2rem;margin-bottom:10px}
+    .fleet-card h3{font-size:1.05rem;margin-bottom:5px}
+    .fleet-card p{color:#c6d2dc;font-size:.9rem}
+    .gallery{background:var(--cream)}
+    .gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .gallery-grid img{width:100%;height:250px;object-fit:cover;border-radius:16px;transition:.25s}
+    .gallery-grid img:hover{transform:scale(1.02)}
+    .booking-band{background:linear-gradient(120deg,#f5d99f,#e8bd6c);padding:45px 0}
+    .booking-band-inner{display:flex;justify-content:space-between;align-items:center;gap:25px}
+    .booking-band h2{font:700 clamp(1.8rem,3vw,2.5rem)/1.2 "Playfair Display",Georgia,serif;color:var(--navy);margin-bottom:7px}
+    .booking-band p{color:#435466}
+    .contact{background:#f7f9fb}
+    .contact-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:35px;align-items:start}
+    .contact-panel{background:var(--navy);color:#fff;border-radius:20px;padding:32px}
+    .contact-panel h3{font:700 1.8rem "Playfair Display",Georgia,serif;margin-bottom:12px}
+    .contact-panel>p{color:#c9d5df;margin-bottom:25px}
+    .contact-line{display:flex;gap:13px;margin:19px 0;align-items:flex-start}
+    .contact-line .symbol{font-size:1.25rem}
+    .contact-line small{display:block;color:#c9d5df}
+    .contact-line a{color:#f3cf87;text-decoration:none;overflow-wrap:anywhere}
+    .booking-form{background:#fff;padding:32px;border-radius:20px;box-shadow:var(--shadow)}
+    .booking-form h3{font:700 1.8rem "Playfair Display",Georgia,serif;color:var(--navy);margin-bottom:7px}
+    .booking-form>p{color:var(--muted);margin-bottom:22px}
+    .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:15px}
+    .field{display:flex;flex-direction:column;gap:6px}
+    .field.full{grid-column:1/-1}
+    .field label{font-size:.85rem;font-weight:700;color:#34495e}
+    .field input,.field select,.field textarea{width:100%;padding:13px 14px;border:1px solid #dce3e9;border-radius:10px;font:inherit;color:var(--ink);background:#fff}
+    .field input:focus,.field select:focus,.field textarea:focus{outline:2px solid #e9c77e;border-color:#d5a84c}
+    .field textarea{min-height:95px;resize:vertical}
+    .submit{width:100%;margin-top:18px;background:var(--green);color:#fff}
+    .form-note{font-size:.78rem;color:var(--muted);margin-top:12px}
+    footer{background:#091e30;color:#c5d0d9;padding:28px 0;text-align:center;font-size:.88rem}
+    footer strong{color:#fff}
+    .floating{position:fixed;right:18px;z-index:999;display:flex;align-items:center;gap:8px;border-radius:999px;padding:12px 17px;color:#fff;text-decoration:none;font-weight:800;font-size:.86rem;box-shadow:0 8px 25px rgba(0,0,0,.2)}
+    .floating.wa{bottom:20px;background:#168b57}
+    .floating.call{bottom:76px;background:#1769aa}
+    @media(max-width:900px){.nav-links{gap:14px}.nav-links a{font-size:.84rem}.nav-cta{display:none}.about-grid{gap:30px}.services-grid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:700px){
+      .container{width:min(100% - 30px,560px)}
+      .topbar .container{justify-content:center;text-align:center}
+      .nav{min-height:70px}.brand img{width:52px;height:50px}.brand-name{font-size:1rem}
+      .menu-toggle{display:block}
+      .nav-links{display:none;position:absolute;top:70px;left:0;right:0;background:#fff;padding:18px 22px 22px;box-shadow:0 15px 25px rgba(0,0,0,.1);flex-direction:column;align-items:stretch;gap:0}
+      .nav-links.open{display:flex}
+      .nav-links li{border-bottom:1px solid var(--line)}
+      .nav-links a{display:block;padding:12px 4px;font-size:.95rem}
+      .hero{min-height:570px;background-position:58% center}
+      .hero-content{padding:72px 0 95px}
+      .hero p{font-size:1rem}
+      .trust-strip{margin-top:-25px}
+      .trust-grid{grid-template-columns:1fr;padding:19px;gap:15px}
+      section{padding:66px 0}
+      .about-grid,.contact-grid{grid-template-columns:1fr}
+      .about-photo img{height:300px}
+      .experience-tag{right:10px}
+      .check-list{grid-template-columns:1fr}
+      .services-grid,.fleet-grid{grid-template-columns:1fr 1fr}
+      .gallery-grid{grid-template-columns:1fr 1fr;gap:10px}
+      .gallery-grid img{height:160px}
+      .booking-band-inner{align-items:flex-start;flex-direction:column}
+      .form-grid{grid-template-columns:1fr}
+      .field.full{grid-column:auto}
+      .booking-form,.contact-panel{padding:23px}
+      .floating{right:12px;padding:10px 13px;font-size:.78rem}
     }
-
-    nav{
-        flex-direction:column;
-        gap:10px;
-    }
-
-    .nav-links{
-        display:flex !important;
-        flex-wrap:wrap;
-        justify-content:center;
-        gap:10px;
-    }
-
-    .nav-links a{
-        font-size:14px;
-    }
-
-    .hero{
-        height:auto;
-        min-height:80vh;
-        padding:80px 15px;
-    }
-
-    .hero-content h1{
-        font-size:2rem;
-    }
-
-    .hero-content p{
-        font-size:1rem;
-    }
-
-    .services-grid{
-        grid-template-columns:1fr;
-    }
-
-    .gallery-grid{
-        grid-template-columns:1fr !important;
-    }
-
-    .gallery-item img{
-        height:220px;
-    }
-
-    .contact-form{
-        padding:15px;
-    }
-
-    .form-group input,
-    .form-group textarea,
-    .form-group select{
-        font-size:16px;
-    }
-
-    .section-title{
-        font-size:1.8rem;
-    }
-
-    .service-card{
-        padding:20px;
-    }
-}
-
-
-.instagram-float,.call-float{
-position:fixed;
-width:60px;height:60px;
-right:40px;
-border-radius:50%;
-display:flex;
-align-items:center;
-justify-content:center;
-color:#fff;
-text-decoration:none;
-font-size:28px;
-z-index:100;
-box-shadow:2px 2px 10px rgba(0,0,0,.3);
-}
-.instagram-float{bottom:110px;background:#E4405F;}
-.call-float{bottom:180px;background:#007BFF;}
-
-@media(max-width:768px){
-.instagram-float,.call-float{width:50px;height:50px;right:20px;}
-.instagram-float{bottom:90px;}
-.call-float{bottom:160px;}
-}
-
-
-/* Fixed Floating Buttons */
-.whatsapp-float,
-.instagram-float,
-.call-float{
-position:fixed !important;
-right:20px !important;
-width:60px;
-height:60px;
-border-radius:50%;
-display:flex !important;
-align-items:center;
-justify-content:center;
-text-decoration:none;
-z-index:99999 !important;
-animation:bounce 2s infinite;
-}
-
-.whatsapp-float{bottom:20px !important;}
-.instagram-float{bottom:90px !important;background:#E4405F;color:#fff;}
-.call-float{bottom:160px !important;background:#007BFF;color:#fff;}
-
-@media(max-width:768px){
-.whatsapp-float,.instagram-float,.call-float{
-width:50px;height:50px;right:15px !important;
-}
-.whatsapp-float{bottom:15px !important;}
-.instagram-float{bottom:80px !important;}
-.call-float{bottom:145px !important;}
-}
-
-
-.float-label{
-    margin-left:8px;
-    font-size:12px;
-    font-weight:bold;font-size:12px;
-    color:white;
-}
-.whatsapp-float,.instagram-float,.call-float{
-    width:auto !important;
-    padding:0 12px;
-    min-width:60px;
-}
-
-
-/* Pill floating buttons with visible names */
-.whatsapp-float,
-.instagram-float,
-.call-float{
-    position:fixed !important;
-    right:20px !important;
-    height:42px !important;
-    width:auto !important;
-    min-width:95px;
-    padding:0 10px !important;
-    border-radius:30px !important;
-    display:flex !important;
-    align-items:center !important;
-    justify-content:center !important;
-    gap:8px;
-    color:#fff !important;
-    text-decoration:none !important;
-    font-weight:bold;font-size:12px;
-    z-index:99999 !important;
-}
-
-.call-float{bottom:160px !important;background:#007BFF !important;}
-.instagram-float{bottom:90px !important;background:#E4405F !important;}
-.whatsapp-float{bottom:20px !important;}
-
-@media(max-width:768px){
- .whatsapp-float,.instagram-float,.call-float{
-   min-width:90px;
-   height:38px !important;
-   right:10px !important;
- }
-}
-
-
-.achievements-section{
-    background:#ffffff;
-    padding:80px 0;
-    color:white;
-}
-.achievements-section .service-card:nth-child(1){
-    background:#d4af37;
-    color:#111;
-}
-.achievements-section .service-card:nth-child(2){
-    background:#0b1f4d;
-    color:white;
-    border:5px solid #d4af37;
-}
-.achievements-section .service-card:nth-child(3){
-    background:#1f2937;
-    color:white;
-    border:5px solid #d4af37;
-}
-.achievements-section .service-card:nth-child(4){
-    background:#111;
-    color:#111;
-    border:10px solid #d4af37
-}
-.achievements-section .service-card h3{
-    font-size:40px;
-    color:inherit;    
-}
-
-
-/* Colorful cards across site */
-.services-grid .service-card:nth-child(4n+1){
-    background:#d4af37;
-    color:#111111;
-}
-.services-grid .service-card:nth-child(4n+2){
-    background:#0b1f4d;
-    color:white;
-}
-.services-grid .service-card:nth-child(4n+3){
-    background:#1f2937;
-    color:white;
-}
-.services-grid .service-card:nth-child(4n+4){
-    background:#ffffff;
-    border:2px solid #d4af37;
-}
-
-.services-grid .service-card h3{
-    margin-bottom:10px;
-}
-
-.service-card{
-    transition:transform .3s, box-shadow .3s;
-}
-
-.section-title,
-section h1,
-section h2,
-section h3{
-    font-weight:800 !important;
-}
-
-@media (max-width:768px){
-    .section-title,
-    section h1,
-    section h2,
-    section h3{
-        font-weight:800 !important;
-    }
-
-    /* Header */
-header{
-    padding:0 !important;
-}
-
-nav.container{
-    padding:5px 20px !important;
-    min-height:70px !important;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-}
-
-/* Logo */
-.logo{
-    display:flex;
-    align-items:center;
-    gap:10px;
-}
-
-.logo img{
-    height:100px !important;
-    width:auto !important;
-    max-height:100px !important;
-    object-fit:contain;
-}
-
-/* Desktop */
-@media (min-width:769px){
-    .logo img{
-        height:100px !important;
-    }
-
-    nav.container{
-        min-height:65px !important;
-        padding:2px 20px !important;
-    }
-}
-
-/* Mobile */
-@media (max-width:768px){
-    .logo img{
-        height:50px !important;
-    }
-
-    nav.container{
-        min-height:60px !important;
-    }
-}
-</style>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    @media(max-width:420px){.services-grid,.fleet-grid{grid-template-columns:1fr}.gallery-grid img{height:135px}.hero h1{font-size:2.55rem}}
+  </style>
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <nav class="container">
-         <div class="logo">
-    <img src="https://raw.githubusercontent.com/Moinkhan0106/Meeratours./main/transprint%20logo.png"
-         alt="Meera Tours Logo"
-         width="120"
-         height="60">
-    <span>MEERA TOURS</span>
-</div>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#instant-booking">Instant Booking</a></li>
-                <li><a href="#about">About Us</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#gallery">Gallery</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1>MEERA TOURS</h1>
-                <p>OUR SERVICE......YOUR HAPPINESS</p>
-                 <div class="cta-buttons">
-               <p style="font-weight: bold; font-size: 18px;">
-    📧 meeratours788@gmail.com | 📱 WhatsApp: 9928520550 | Instant Booking | 24/7 Service
-</p>
-                     <a href="#contact" class="cta-button">Book Now</a>
-            </div>
-        </div>
-    </section>
-<section id="instant-booking" style="padding:50px 20px;background:#d4af37;text-align:center;">
+  <div class="topbar">
     <div class="container">
-        <h2 style="color:#111;margin-bottom:15px;">🚕 Instant Booking</h2>
-        <p style="margin-bottom:20px;font-size:18px;">
-            Call, WhatsApp, or Instagram us now for instant taxi booking.
-        </p>
-        <a href="tel:+919928520550" class="cta-button">📞 Call Now</a>
-        <a href="https://wa.me/919928520550" class="cta-button" style="margin-left:10px;">💬 WhatsApp Now</a>
+      <span>✉ <a href="mailto:meeratours788@gmail.com">meeratours788@gmail.com</a></span>
+      <span>☎ <a href="tel:+919928520550">+91 99285 20550</a> &nbsp; · &nbsp; Available for bookings 24/7</span>
     </div>
-</section>
+  </div>
+  <header>
+    <nav class="container nav" aria-label="Main navigation">
+      <a class="brand" href="#home" aria-label="Meera Tours home">
+        <img src="transprint%20logo.png" alt="Meera Tours logo">
+        <span class="brand-name">MEERA TOURS<small>OUR SERVICE · YOUR HAPPINESS</small></span>
+      </a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Open navigation" aria-expanded="false">☰</button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home">Home</a></li><li><a href="#about">About</a></li><li><a href="#services">Services</a></li>
+        <li><a href="#fleet">Our Fleet</a></li><li><a href="#gallery">Gallery</a></li><li><a href="#contact">Contact</a></li>
+      </ul>
+      <a class="nav-cta" href="#contact">Book Your Ride ↗</a>
+    </nav>
+  </header>
 
-  
- <!-- About Section -->
-    <section class="section" id="about">
-        <div class="about-grid">
-            <div class="about-text">
-                <h2 class="section-title">Welcome to Meera Tours</h2>
-                 <div class="service-card">
-                <h3>
-Welcome to Meera Tours, your trusted travel partner since 2009. With years of experience in the travel industry, we are dedicated to creating memorable journeys and hassle-free travel experiences for our valued customers.
-
-At Meera Tours, we specialize in providing customized tour packages, holiday planning, hotel bookings, transportation services, and travel assistance tailored to every traveler's needs. Whether you're planning a family vacation, honeymoon, group tour, pilgrimage, or corporate trip, our team is committed to delivering comfort, convenience, and exceptional service.
-
-Since our establishment in 2009, we have built a reputation for reliability, customer satisfaction, and affordable travel solutions. Our mission is to turn your travel dreams into reality by offering carefully planned itineraries, quality services, and unforgettable experiences.
-
-We believe that every journey should be enjoyable, stress-free, and filled with lasting memories. Let Meera Tours be your guide to discovering new destinations and experiencing the world with confidence.
-
-**Meera Tours – Creating Memorable Journeys Since 2009.**
-</h3>
-              
+  <main>
+    <section class="hero" id="home">
+      <div class="container">
+        <div class="hero-content">
+          <div class="eyebrow">Your journey, our responsibility</div>
+          <h1>Travel more.<br><span>Worry less.</span></h1>
+          <p>From everyday rides to memorable holidays, Meera Tours helps make every journey comfortable, convenient and easy to plan.</p>
+          <div class="hero-actions">
+            <a class="btn btn-gold" href="#contact">Plan Your Journey →</a>
+            <a class="btn btn-outline" href="https://wa.me/919928520550?text=Hello%20Meera%20Tours%2C%20I%20would%20like%20to%20enquire%20about%20a%20booking." target="_blank" rel="noopener">WhatsApp Us</a>
+          </div>
         </div>
+      </div>
     </section>
 
-     <!-- Services Section -->
-    
-<section class="achievements-section">
-<div class="container">
-<h2 class="section-title">🏆 Trusted Since 2009</h2>
-<p style="text-align:center;margin-bottom:30px;">Providing Safe, Reliable & Comfortable Travel Services for Over 15 Years</p>
-<div class="services-grid">
-<div class="service-card"><h3>15+</h3><p>Years of Experience</p></div>
-<div class="service-card"><h3>50,000+</h3><p>Happy Customers</p></div>
-<div class="service-card"><h3>24/7</h3><p>Customer Support</p></div>
-</div>
-</section>
+    <div class="trust-strip">
+      <div class="container trust-grid">
+        <div class="trust-item"><div class="trust-icon">🧭</div><div><strong>Travel expertise</strong><span>Serving travellers since 2009</span></div></div>
+        <div class="trust-item"><div class="trust-icon">🚘</div><div><strong>Vehicle choices</strong><span>Options for individuals and groups</span></div></div>
+        <div class="trust-item"><div class="trust-icon">💬</div><div><strong>Easy enquiries</strong><span>Book directly through WhatsApp</span></div></div>
+      </div>
+    </div>
 
-<section id="services" class="container">
-         <h2 class="section-title">Our Services</h2>
+    <section class="about" id="about">
+      <div class="container about-grid">
+        <div class="about-photo">
+          <img src="photo6.jpeg" alt="Travel and transport experience with Meera Tours" loading="lazy">
+          <div class="experience-tag"><strong>Since 2009</strong><span>Creating memorable journeys</span></div>
+        </div>
+        <div class="about-copy">
+          <div class="section-kicker">Welcome to Meera Tours</div>
+          <h2>Every journey deserves a thoughtful start.</h2>
+          <p>Meera Tours is your travel partner for comfortable rides and memorable journeys. Since 2009, we have focused on reliable service, convenient travel planning and support for our customers.</p>
+          <p>Whether you are planning a family holiday, pilgrimage, group trip, airport transfer or outstation journey, we can help you choose a travel option that suits your plans.</p>
+          <ul class="check-list"><li>Customized tour planning</li><li>Airport transfers</li><li>Family and group travel</li><li>Outstation taxi services</li></ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="container">
+        <div class="section-head"><div class="section-kicker">What we do</div><h2>Travel services for every plan</h2><p>Tell us where you want to go. We’ll help you plan the ride or trip that fits your needs.</p></div>
         <div class="services-grid">
-            <div class="service-card">
-                <div class="service-icon">🚙</div>
-                <h3>Airport Transfers</h3>
-                <p>Reliable airport pickups and drop-offs with flight tracking.</p>
-            </div>
-            <div class="service-card">
-                <div class="service-icon">🏙️</div>
-                <h3>City Rides</h3>
-                <p>Comfortable rides within the city at affordable rates.</p>
-            </div>
-            <div class="service-card">
-                <div class="service-icon">🎉</div>
-                <h3>Event Planing</h3>
-                <p>Group transportation for weddings, parties & events.</p>
-            </div>
-        
-<div class="service-card">
-<div class="service-icon">🛕</div>
-<h3>Pilgrimage Tours</h3>
-<p>Comfortable religious and spiritual travel packages.</p>
-</div>
-<div class="service-card">
-<div class="service-icon">🏨</div>
-<h3>Tours Packages</h3>
-<p>Assistance with affordable and premium Tours Packages.</p>
-</div>
-<div class="service-card">
-<div class="service-icon">📍</div>
-<h3>Outstation Trips</h3>
-<p>Safe long-distance travel across Rajasthan and India.</p>
-</div>
-</div>
-</section>
-
-<!-- Cars Section -->
-
-      <section id="CARS" class="container">   
-        <h2 class="section-title">CARS WE PROVIDE</h2>
-           <div class="services-grid">
-            <div class="service-card">
-                <div class="service-icon">🚙</div>
-                <h3>TOYOTA INNOVA</h3>
-                <p>6+1 Seater</p>
-            </div>
-            <div class="service-card">
-                <div class="service-icon">🚙</div>
-                <h3>INNOVA CRYSTA</h3>
-                <p>6+1/7+1 seater</p>
-            </div>
-            <div class="service-card">
-                <div class="service-icon">🚙</div> 
-                <h3>INNOVA HYCROSS</h3>
-                <p>6+1 seater with hybrid technology</p>
-            </div>
-            <div class="service-card">
-                <div class="service-icon">🚌</div> 
-                <h3>TRAVELLERS</h3>
-                <p>12+1/17+1 seater</p>
-            </div>
-            <div class="service-card">
-                <div class="service-icon">🚗</div> 
-                <h3>Sedan & Hatchback Cars</h3>
-                <p>We provide all type of Sedan&Hatchback Cars</p>
-            </div>
-            <div class="service-card">
-                <div class="service-icon">🏎️</div> 
-                <h3>LAXUARY CARS</h3>
-                <p>We provide many all type of laxury cars
-                   like- Bmw,Mercedes,Audi and many othres...</p>
-            </div>
+          <article class="service-card"><div class="service-icon">✈️</div><h3>Airport Transfers</h3><p>Convenient airport pickups and drop-offs for a smoother start or finish to your journey.</p></article>
+          <article class="service-card"><div class="service-icon">🏙️</div><h3>City Rides</h3><p>Comfortable local transportation for personal visits, work and everyday travel.</p></article>
+          <article class="service-card"><div class="service-icon">🎉</div><h3>Events & Weddings</h3><p>Group transportation arrangements for weddings, celebrations and special occasions.</p></article>
+          <article class="service-card"><div class="service-icon">🛕</div><h3>Pilgrimage Tours</h3><p>Plan spiritual and religious journeys with travel arrangements for your group.</p></article>
+          <article class="service-card"><div class="service-icon">🏞️</div><h3>Tour Packages</h3><p>Holiday planning and customized travel packages for families and groups.</p></article>
+          <article class="service-card"><div class="service-icon">🛣️</div><h3>Outstation Trips</h3><p>Long-distance travel options for journeys across Rajasthan and other parts of India.</p></article>
         </div>
-    </section>
-    
-<section id="gallery" class="gallery">
-    <div class="container">
-        <h2 class="section-title">Our Gallery</h2>
-
-        
-<div class="gallery-grid">
-
-<div class="gallery-item slideshow">
-<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSANTQyC12DfOhtODZZ-NeusXGaw2-_wgnRw&s" class="active">
-<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT08zZCIRCBT6ljLkNHRiOmmg-WyVKfAfCn3gbiFVdnMQ&s">
-<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTN5QE2APX1RNUfFCV3H_g7Di5Bs7vdQYZediynkC7AA&s">
-<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkK7rVL6r_AZiBuhsKyJ8C4lIq_i97076S36gaHlFaog&s">
-<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4kp7xEXaKEQ9Zc6yj-RHd_No-wqlelsq8dQ&s">
-<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlGDijasHDx421BCil6jcNNhJ0eLwlUhQo2w&s">
-</div>
-
-<div class="gallery-item slideshow">
-<img src="https://github.com/Moinkhan0106/Meeratours./blob/main/WhatsApp%20Image%202026-06-01%20at%2011.34.14%20PM%20(1).jpeg?raw=true" class="active">
-<img src="https://github.com/Moinkhan0106/Meeratours./blob/main/WhatsApp%20Image%202026-06-01%20at%2011.34.14%20PM.jpeg?raw=true">
-<img src="https://github.com/Moinkhan0106/Meeratours./blob/main/WhatsApp%20Image%202026-06-01%20at%2011.34.14%20PM%20(2).jpeg?raw=true">
-<img src="https://github.com/Moinkhan0106/Meeratours./blob/main/WhatsApp%20Image%202026-06-01%20at%2011.34.15%20PM.jpeg?raw=true">
-</div>
-
-<div class="gallery-item slideshow">
-<img src="data:image/jpeg;base64,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" class="active">
-<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRh2KtnuvQuYD9cCTZBo-jpWTLxVBlL0EKKFGn38Xt9sg&s">
-<img src="data:image/jpeg;base64,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">
-<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTeDWWE6gh2i1JdW5zoU0cKQ2bYMHzDLTNgnA&s">
-<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTuH_dPeUbNqaSUrQ7OZUQHblD57v7fy-PvJA&s">
-</div>
-
-</div>
-   </div>
-</section>
-
-
-    <!-- Features Section -->
-        <h2 class="section-title">WHY CHOOSE MEERA TOURS?</h2>
-       <div class="services-grid">
-            <div class="service-card">
-                <i>✅</i>
-                <h3>15+ year trust</h3>
-                <p>15+ Years of Experience.</p>
-            </div>
-           <div class="service-card">
-                <i>⭐</i>
-                <h3>Verified Drivers</h3>
-                <p>All drivers are background checked and trained.</p>
-            </div>
-            <div class="service-card">
-                <i>💰</i>
-                <h3>Affordable Rates</h3>
-                <p>Best prices with no hidden charges.</p>
-            </div>
-           <div class="service-card">
-                <i>🚀</i>
-                <h3>Fast Booking</h3>
-                <p>Book your ride in just 30 seconds.</p>
-            </div>
-        </div>
+      </div>
     </section>
 
-     
-
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <div class="contact-content">
-                <div class="contact-info">
-                    <h3>Get in Touch</h3>
-                    <div class="contact-item">
-                        📞
-                        <div>
-                            <strong>Mobile / WhatsApp:</strong><br>
-                            <a href="tel:+919928520550" style="color: #d4af37;">+91 99285 20550</a>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <div>
-                            <strong>Email:</strong><br>
-                            <a href="mailto:meeratours788@gmail.com" style="color: #d4af37;">meeratours788@gmail.com</a>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-clock"></i>
-                        Available 24/7 for your service
-                    </div>
-                    <div class="contact-item">
-                    *After booking our team replay as soon possible.
-                    </div>
-                    <div class="contact-item">
-                    *book online before 2-3 days of pickup date.
-                    </div>
-                    <div class="contact-item">
-                    *for urgent booking call on given number.
-                    </div>
-                </div>
-                <div class="contact-form">
-                    <h3>📱 Instant WhatsApp Booking</h3>
-                    <form id="bookingForm">
-                        <div class="form-group">
-                            <input type="text" id="customerName" placeholder="Your Name *" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="tel" id="customerPhone" placeholder="Your Phone *" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="text" id="pickupLocation" placeholder="Pickup Location *" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="text" id="dropLocation" placeholder="Drop Location *" required>
-                        </div>
-                        <div class="form-group">
-                            <label>Pick-up Date & Time</label>
-                            <input type="date time-local" id="datetime" required>
-                        </div>
-                        <div class="form-group">
-                            <select id="car" required>
-                                <option value="">-- Choose a Car --</option>
-                                <option value="sedan">sedan (4+1seater)</option>
-                                <option value="innova">innova (6+1Seater)</option>
-                                <option value="innova crysta">Innova crysta (7+1Seater)</option>
-                                <option value="Innova hycrose">Innova hycrose (7+1Seater)</option>
-                                <option value="tempo traveller">Tempo Traveller (17+1Seater)</option>
-                              </select>
-                        </div>
-                        <div class="form-group">
-                            <textarea id="additionalDetails" placeholder="Date, Time, Special Requests..."></textarea>
-                        </div>
-                        <button type="submit" class="submit-btn" id="submitBtn">
-                            <span id="btnText">🚀 Send WhatsApp Booking</span>
-                            <span id="btnLoading" style="display: none;">📱 Sending...</span>
-                        </button>
-                        <div id="successMessage" class="success-message">
-                            ✅ Booking sent to WhatsApp! We will contact you within 5 minutes.
-                        </div>
-                    </form>
-                </div>
-            </div>
+    <section class="fleet" id="fleet">
+      <div class="container">
+        <div class="section-head"><div class="section-kicker">Choose your ride</div><h2>Our vehicle options</h2><p>Vehicle availability and seating can be confirmed with our team when you enquire.</p></div>
+        <div class="fleet-grid">
+          <article class="fleet-card"><div class="car-icon">🚙</div><h3>Toyota Innova</h3><p>6+1 seater</p></article>
+          <article class="fleet-card"><div class="car-icon">🚙</div><h3>Innova Crysta</h3><p>6+1 / 7+1 seater</p></article>
+          <article class="fleet-card"><div class="car-icon">🚙</div><h3>Innova Hycross</h3><p>Hybrid vehicle option · 6+1 seater</p></article>
+          <article class="fleet-card"><div class="car-icon">🚌</div><h3>Tempo Traveller</h3><p>12+1 / 17+1 seater options</p></article>
+          <article class="fleet-card"><div class="car-icon">🚗</div><h3>Sedan & Hatchback</h3><p>Options for smaller groups and city travel</p></article>
+          <article class="fleet-card"><div class="car-icon">✨</div><h3>Luxury Cars</h3><p>Ask us about BMW, Mercedes, Audi and other options</p></article>
         </div>
+      </div>
     </section>
 
-    <!-- WhatsApp Floating Button -->
-    <a href="https://wa.me/919928520550?text=Hi%20MEERA%20TOURS%2C%20I%20need%20a%20taxi%20service." class="whatsapp-float" target="_blank">💬 WhatsApp</a>
-
-   
-<a href="https://instagram.com/meeratours0961" class="instagram-float" target="_blank">📸 Instagram</a>
-
-<a href="tel:+919928520550" class="call-float">📞 Call</a>
-
-
-<!-- Footer -->
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 MEERA TOURS. All rights reserved. | Safe & Reliable Taxi Service</p>
+    <section class="gallery" id="gallery">
+      <div class="container">
+        <div class="section-head"><div class="section-kicker">A look at the journey</div><h2>Meera Tours gallery</h2><p>A selection of images from the photos included with your website files.</p></div>
+        <div class="gallery-grid">
+          <img src="WhatsApp%20Image%202026-06-01%20at%2011.34.14%20PM.jpeg" alt="Meera Tours travel gallery photo 1" loading="lazy">
+          <img src="WhatsApp%20Image%202026-06-01%20at%2011.34.14%20PM%20(1).jpeg" alt="Meera Tours travel gallery photo 2" loading="lazy">
+          <img src="WhatsApp%20Image%202026-06-01%20at%2011.34.14%20PM%20(2).jpeg" alt="Meera Tours travel gallery photo 3" loading="lazy">
+          <img src="WhatsApp%20Image%202026-06-01%20at%2011.34.15%20PM.jpeg" alt="Meera Tours travel gallery photo 4" loading="lazy">
+          <img src="WhatsApp%20Image%202026-06-01%20at%2011.40.29%20PM.jpeg" alt="Meera Tours travel gallery photo 5" loading="lazy">
+          <img src="WhatsApp%20Image%202026-06-01%20at%2011.40.32%20PM.jpeg" alt="Meera Tours travel gallery photo 6" loading="lazy">
         </div>
-    </footer>
+      </div>
+    </section>
 
-    <script>
-        // WhatsApp Business Number
-        const WHATSAPP_NUMBER = "919928520550"; // Your number without +91
+    <section class="booking-band">
+      <div class="container booking-band-inner">
+        <div><h2>Have a destination in mind?</h2><p>Share your travel details and get in touch with Meera Tours.</p></div>
+        <a class="btn" style="background:var(--navy);color:#fff" href="#contact">Enquire Now →</a>
+      </div>
+    </section>
 
-        // Smooth scrolling
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
+    <section class="contact" id="contact">
+      <div class="container">
+        <div class="section-head"><div class="section-kicker">Let’s get you moving</div><h2>Contact & booking</h2><p>Send your trip details. Your WhatsApp app will open with a ready-to-send booking message.</p></div>
+        <div class="contact-grid">
+          <div class="contact-panel">
+            <h3>We’re here to help.</h3><p>For urgent or same-day bookings, please call us directly to check availability.</p>
+            <div class="contact-line"><span class="symbol">📞</span><div><small>Call / WhatsApp</small><a href="tel:+919928520550">+91 99285 20550</a></div></div>
+            <div class="contact-line"><span class="symbol">✉️</span><div><small>Email</small><a href="mailto:meeratours788@gmail.com">meeratours788@gmail.com</a></div></div>
+            <div class="contact-line"><span class="symbol">📸</span><div><small>Instagram</small><a href="https://instagram.com/meeratours0961" target="_blank" rel="noopener">@meeratours0961</a></div></div>
+            <div class="contact-line"><span class="symbol">🕒</span><div><small>Enquiry support</small><span>Available 24/7 for your service</span></div></div>
+          </div>
+          <form class="booking-form" id="bookingForm">
+            <h3>Quick booking enquiry</h3><p>Fill in the details below to prepare your WhatsApp message.</p>
+            <div class="form-grid">
+              <div class="field"><label for="customerName">Your name *</label><input id="customerName" name="name" autocomplete="name" required placeholder="Enter your name"></div>
+              <div class="field"><label for="customerPhone">Phone number *</label><input id="customerPhone" name="phone" type="tel" inputmode="numeric" pattern="[0-9+() -]{8,16}" autocomplete="tel" required placeholder="Your contact number"></div>
+              <div class="field"><label for="pickupLocation">Pickup location *</label><input id="pickupLocation" name="pickup" required placeholder="Pickup city / address"></div>
+              <div class="field"><label for="dropLocation">Drop location *</label><input id="dropLocation" name="drop" required placeholder="Destination"></div>
+              <div class="field"><label for="travelDate">Pickup date *</label><input id="travelDate" name="date" type="date" required></div>
+              <div class="field"><label for="travelTime">Pickup time</label><input id="travelTime" name="time" type="time"></div>
+              <div class="field full"><label for="car">Vehicle preference</label><select id="car" name="car"><option value="Not sure / please suggest">Please suggest a vehicle</option><option>Sedan / Hatchback</option><option>Toyota Innova</option><option>Innova Crysta</option><option>Innova Hycross</option><option>Tempo Traveller</option><option>Luxury car</option></select></div>
+              <div class="field full"><label for="additionalDetails">Additional details</label><textarea id="additionalDetails" name="details" placeholder="Number of passengers, return trip, luggage or other requests"></textarea></div>
+            </div>
+            <button class="btn submit" type="submit">Send enquiry on WhatsApp ↗</button>
+            <p class="form-note">Your message is not sent automatically. WhatsApp will open so you can review and send it.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
 
-        // Booking Form WhatsApp Integration
-        document.getElementById('bookingForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Get form values
-            const name = document.getElementById('customerName').value;
-            const phone = document.getElementById('customerPhone').value;
-            const pickup = document.getElementById('pickupLocation').value;
-            const drop = document.getElementById('dropLocation').value;           
-            const car = document.getElementById('car').value;
-            const datetime = document.getElementById('datetime').value;
-            const details = document.getElementById('additionalDetails').value || 'No additional details';
+  <a class="floating call" href="tel:+919928520550" aria-label="Call Meera Tours">☎ Call</a>
+  <a class="floating wa" href="https://wa.me/919928520550?text=Hello%20Meera%20Tours%2C%20I%20would%20like%20to%20enquire." target="_blank" rel="noopener" aria-label="WhatsApp Meera Tours">☘ WhatsApp</a>
+  <footer><div class="container"><strong>MEERA TOURS</strong> · Our Service, Your Happiness<br>© <span id="year"></span> Meera Tours. All rights reserved.</div></footer>
 
-            // Create WhatsApp message
-            const message = ` *NEW TAXI BOOKING REQUEST* 
+  <script>
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+    menuToggle.addEventListener('click', () => {
+      const isOpen = navLinks.classList.toggle('open');
+      menuToggle.setAttribute('aria-expanded', String(isOpen));
+      menuToggle.setAttribute('aria-label', isOpen ? 'Close navigation' : 'Open navigation');
+      menuToggle.textContent = isOpen ? '✕' : '☰';
+    });
+    navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      menuToggle.setAttribute('aria-expanded', 'false');
+      menuToggle.textContent = '☰';
+    }));
+    document.getElementById('year').textContent = new Date().getFullYear();
 
- *Customer:* ${name}
- *Phone:* ${phone}
- *Pickup:* ${pickup}
- *Drop:* ${drop}
- *Car:* ${car}
- *datetime:* ${datetime}
- *Details:* ${details}
+    const dateInput = document.getElementById('travelDate');
+    const today = new Date();
+    const localToday = new Date(today.getTime() - today.getTimezoneOffset() * 60000).toISOString().slice(0,10);
+    dateInput.min = localToday;
 
-*MEERA TOURS - Please confirm & reply!*`;
-
-            // Encode message for WhatsApp URL
-            const encodedMessage = encodeURIComponent(message);
-            const whatsappURL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodedMessage}`;
-
-            // Show loading
-            const btnText = document.getElementById('btnText');
-            const btnLoading = document.getElementById('btnLoading');
-            const submitBtn = document.getElementById('submitBtn');
-            const successMsg = document.getElementById('successMessage');
-
-            btnText.style.display = 'none';
-            btnLoading.style.display = 'inline';
-            submitBtn.disabled = true;
-
-            // Open WhatsApp after short delay
-            setTimeout(() => {
-                window.open(whatsappURL, '_blank');
-                
-                // Show success message
-                successMsg.style.display = 'block';
-                
-                // Reset form after 3 seconds
-                setTimeout(() => {
-                    this.reset();
-                    successMsg.style.display = 'none';
-                    btnText.style.display = 'inline';
-                    btnLoading.style.display = 'none';
-                    submitBtn.disabled = false;
-                }, 3000);
-            }, 1000);
-        });
-
-        // Auto-format phone number
-        document.getElementById('customerPhone').addEventListener('input', function(e) {
-            let value = e.target.value.replace(/\D/g, '');
-            if (value.length > 10) {
-                value = value.slice(-10);
-            }
-            e.target.value = value;
-        });
-    
-// Gallery slideshows
-document.querySelectorAll('.slideshow').forEach(slideshow => {
-    const images = slideshow.querySelectorAll('img');
-    let index = 0;
-    setInterval(() => {
-        images[index].classList.remove('active');
-        index = (index + 1) % images.length;
-        images[index].classList.add('active');
-    }, 3000);
-});
-
-</script>
+    document.getElementById('bookingForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      if (!this.reportValidity()) return;
+      const value = id => document.getElementById(id).value.trim();
+      const message = [
+        'NEW BOOKING ENQUIRY - MEERA TOURS',
+        '',
+        'Name: ' + value('customerName'),
+        'Phone: ' + value('customerPhone'),
+        'Pickup: ' + value('pickupLocation'),
+        'Destination: ' + value('dropLocation'),
+        'Pickup date: ' + value('travelDate'),
+        'Pickup time: ' + (value('travelTime') || 'Not specified'),
+        'Vehicle: ' + value('car'),
+        'Additional details: ' + (value('additionalDetails') || 'None'),
+        '',
+        'Please share availability and fare details.'
+      ].join('\n');
+      const url = 'https://wa.me/919928520550?text=' + encodeURIComponent(message);
+      window.open(url, '_blank', 'noopener,noreferrer');
+    });
+  </script>
 </body>
 </html>
-
-<!-- floating button size updated -->
